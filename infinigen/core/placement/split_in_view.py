@@ -149,12 +149,23 @@ def compute_inview_distances(
         bpy.context.scene.frame_set(frame)
         for cam in cameras:
             dists, vis_dists = compute_vis_dists(points, cam)
-            mask |= (dists < dist_max) & (vis_dists < vis_margin)
-            if mask.any():
-                min_vis_dists[mask] = np.minimum(vis_dists[mask], min_vis_dists[mask])
-                min_dists[mask] = np.minimum(dists[mask], min_dists[mask])
 
-            logger.debug(f"Computed dists for {frame=} {cam.name} {mask.mean()=:.2f}")
+            frame_cam_mask = np.ones(len(points), dtype=bool)
+
+            if dist_max is not None:
+                frame_cam_mask &= dists < dist_max
+            if vis_margin is not None:
+                frame_cam_mask &= vis_dists < vis_margin
+
+            if frame_cam_mask.any():
+                min_vis_dists[frame_cam_mask] = np.minimum(
+                    vis_dists[frame_cam_mask], min_vis_dists[frame_cam_mask]
+                )
+                min_dists[frame_cam_mask] = np.minimum(
+                    dists[frame_cam_mask], min_dists[frame_cam_mask]
+                )
+
+            mask |= frame_cam_mask
 
     return mask, min_dists, min_vis_dists
 
