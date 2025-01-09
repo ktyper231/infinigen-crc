@@ -46,13 +46,24 @@ from infinigen.core.util.test_utils import (
     load_txt_list,
 )
 from infinigen.terrain import Terrain
-from infinigen_examples.constraints import home as home_constraints
 
-from . import (
+# from . import (
+#     generate_nature,  # noqa F401 # needed for nature gin configs to load  # noqa F401 # needed for nature gin configs to load
+# )
+# from .constraints import util as cu
+# from .util.generate_indoors_util import (
+#     apply_greedy_restriction,
+#     create_outdoor_backdrop,
+#     hide_other_rooms,
+#     place_cam_overhead,
+#     restrict_solving,
+# )
+from infinigen_examples import (
     generate_nature,  # noqa F401 # needed for nature gin configs to load  # noqa F401 # needed for nature gin configs to load
 )
-from .constraints import util as cu
-from .util.generate_indoors_util import (
+from infinigen_examples.constraints import home as home_constraints
+from infinigen_examples.constraints import util as cu
+from infinigen_examples.util.generate_indoors_util import (
     apply_greedy_restriction,
     create_outdoor_backdrop,
     hide_other_rooms,
@@ -155,7 +166,7 @@ def compose_indoors(output_folder: Path, scene_seed: int, **overrides):
     p.run_stage("sky_lighting", lighting.sky_lighting.add_lighting, use_chance=False)
 
     consgraph = home_constraints.home_furniture_constraints()
-    consgraph_rooms = home_constraints.home_room_constraints()
+    consgraph_rooms = home_constraints.home_room_constraints(True)
     constants = consgraph_rooms.constants
 
     stages = default_greedy_stages()
