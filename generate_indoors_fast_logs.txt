@@ -1,88 +1,92 @@
-home_furniture_constraints params - furniture_fullness_pct: 0.767615230562763
-home_furniture_constraints params - obj_interior_obj_pct: 0.6833732801893091
-home_furniture_constraints params - obj_on_storage_pct: 0.7673269664675622
-home_furniture_constraints params - obj_on_nonstorage_pct: 0.5513069871878817
-home_furniture_constraints params - painting_area_per_room_area: 2.0288334801032577
+home_furniture_constraints params - furniture_fullness_pct: 0.7176140520475409
+home_furniture_constraints params - obj_interior_obj_pct: 0.6137624974894316
+home_furniture_constraints params - obj_on_storage_pct: 0.8017375797653623
+home_furniture_constraints params - obj_on_nonstorage_pct: 0.8777799329444751
+home_furniture_constraints params - painting_area_per_room_area: 2.3468695981778502
 home_furniture_constraints params - has_tv: True
 home_furniture_constraints params - has_aquarium_tank: False
 home_furniture_constraints params - has_birthday_balloons: False
 home_furniture_constraints params - has_cocktail_tables: False
-home_furniture_constraints params - has_kitchen_barstools: False
-home_furniture_constraints params - furniture_fullness_pct: 0.767615230562763
-home_furniture_constraints params - obj_interior_obj_pct: 0.6833732801893091
-home_furniture_constraints params - obj_on_storage_pct: 0.7673269664675622
-home_furniture_constraints params - obj_on_nonstorage_pct: 0.5513069871878817
-home_furniture_constraints params - painting_area_per_room_area: 2.0288334801032577
+home_furniture_constraints params - has_kitchen_barstools: True
+home_furniture_constraints params - furniture_fullness_pct: 0.7176140520475409
+home_furniture_constraints params - obj_interior_obj_pct: 0.6137624974894316
+home_furniture_constraints params - obj_on_storage_pct: 0.8017375797653623
+home_furniture_constraints params - obj_on_nonstorage_pct: 0.8777799329444751
+home_furniture_constraints params - painting_area_per_room_area: 2.3468695981778502
 home_furniture_constraints params - has_tv: True
 home_furniture_constraints params - has_aquarium_tank: False
 home_furniture_constraints params - has_birthday_balloons: False
 home_furniture_constraints params - has_cocktail_tables: False
-home_furniture_constraints params - has_kitchen_barstools: False
-home_furniture_constraints params - furniture_fullness_pct: 0.767615230562763
-home_furniture_constraints params - obj_interior_obj_pct: 0.6833732801893091
-home_furniture_constraints params - obj_on_storage_pct: 0.7673269664675622
-home_furniture_constraints params - obj_on_nonstorage_pct: 0.5513069871878817
-home_furniture_constraints params - painting_area_per_room_area: 2.0288334801032577
+home_furniture_constraints params - has_kitchen_barstools: True
+home_furniture_constraints params - furniture_fullness_pct: 0.7176140520475409
+home_furniture_constraints params - obj_interior_obj_pct: 0.6137624974894316
+home_furniture_constraints params - obj_on_storage_pct: 0.8017375797653623
+home_furniture_constraints params - obj_on_nonstorage_pct: 0.8777799329444751
+home_furniture_constraints params - painting_area_per_room_area: 2.3468695981778502
 home_furniture_constraints params - has_tv: True
 home_furniture_constraints params - has_aquarium_tank: False
 home_furniture_constraints params - has_birthday_balloons: False
 home_furniture_constraints params - has_cocktail_tables: False
-home_furniture_constraints params - has_kitchen_barstools: False
+home_furniture_constraints params - has_kitchen_barstools: True
 CLUTTER REPORT self.curr_iteration=50
   State Size 34
   Trimesh 35
   Objects 40
   Meshes 39
-  Materials 117
-  Textures 117
+  Materials 89
+  Textures 89
+CLUTTER REPORT self.curr_iteration=50
+  State Size 34
+  Trimesh 35
+  Objects 40
+  Meshes 39
+  Materials 121
+  Textures 121
 CLUTTER REPORT self.curr_iteration=50
   State Size 39
   Trimesh 40
-  Objects 46
-  Meshes 45
-  Materials 110
-  Textures 110
+  Objects 45
+  Meshes 44
+  Materials 141
+  Textures 141
 CLUTTER REPORT self.curr_iteration=50
-  State Size 43
-  Trimesh 44
-  Objects 50
-  Meshes 49
-  Materials 131
-  Textures 131
+  State Size 35
+  Trimesh 36
+  Objects 41
+  Meshes 40
+  Materials 174
+  Textures 174
 CLUTTER REPORT self.curr_iteration=50
-  State Size 36
-  Trimesh 37
-  Objects 42
-  Meshes 41
-  Materials 205
-  Textures 205
+  State Size 35
+  Trimesh 36
+  Objects 41
+  Meshes 40
+  Materials 198
+  Textures 198
 CLUTTER REPORT self.curr_iteration=50
   State Size 40
   Trimesh 41
-  Objects 47
-  Meshes 46
-  Materials 205
-  Textures 205
-CLUTTER REPORT self.curr_iteration=50
-  State Size 44
-  Trimesh 45
-  Objects 51
-  Meshes 50
-  Materials 250
-  Textures 250
-Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
-Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
-Info: Removed 875 vertices
+  Objects 46
+  Meshes 45
+  Materials 271
+  Textures 271
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
+Info: Removed 815 vertices
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
-Info: Saved "scene_20250123_162344_823.blend"
-Info: Saved "scene_20250123_162351_681.blend"
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
-Info: Saved "scene_20250123_162436_668.blend"
+Info: Saved "scene_20250123_183726_190.blend"
+Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
+Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
+Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
+Info: Saved "scene_20250123_184003_901.blend"
+Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
+Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
+Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
+Info: Saved "scene_20250123_184030_557.blend"

@@ -229,7 +229,7 @@ def compose_indoors(output_folder: Path, scene_seed: int, **overrides):
     )
     house_bbox = (np.min(house_bbox, axis=0), np.max(house_bbox, axis=0))
 
-    """camera_rigs = placement.camera.spawn_camera_rigs()"""
+    camera_rigs = placement.camera.spawn_camera_rigs()  # noqa: F841
 
     """
     def pose_cameras():
@@ -372,9 +372,9 @@ def compose_indoors(output_folder: Path, scene_seed: int, **overrides):
     )
 
     rooms_meshed = butil.get_collection("placeholders:room_meshes")  # noqa: F841
+
+    rooms_split = room_dec.split_rooms(list(rooms_meshed.objects))  # noqa: F841
     """
-    rooms_split = room_dec.split_rooms(list(rooms_meshed.objects))
-    
     p.run_stage(
         "room_pillars",
         room_dec.room_pillars,
