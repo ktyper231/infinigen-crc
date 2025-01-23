@@ -187,7 +187,7 @@ def execute_tasks(
     frame_range: tuple[int],
     camera_id: tuple[int],
     resample_idx: int = None,
-    output_blend_name: str = "scene.blend",
+    output_blend_name: str = "scene",  # mark: changed from scene.blend to scene
     generate_resolution=(1280, 720),
     fps: int = 24,
     reset_assets=True,
@@ -280,6 +280,10 @@ def execute_tasks(
 
     group_collections()
 
+    timestamp = (
+        time.strftime("%Y%m%d_%H%M%S") + f"_{int(time.time() * 1000) % 1000:03d}"
+    )
+    output_blend_name_with_timestamp = f"{output_blend_name}_{timestamp}.blend"
     if input_folder is not None and input_folder != output_folder:
         for mesh in os.listdir(input_folder):
             if (
@@ -289,15 +293,16 @@ def execute_tasks(
     if Task.Coarse in task or Task.Populate in task or Task.FineTerrain in task:
         with Timer("Writing output blendfile"):
             logging.info(
-                f"Writing output blendfile to {output_folder / output_blend_name}"
+                f"Writing output blendfile to {output_folder / output_blend_name_with_timestamp}"
             )
             if optimize_terrain_diskusage and task == [Task.FineTerrain]:
                 os.symlink(
-                    input_folder / output_blend_name, output_folder / output_blend_name
+                    input_folder / output_blend_name_with_timestamp,
+                    output_folder / output_blend_name_with_timestamp,
                 )
             else:
                 bpy.ops.wm.save_mainfile(
-                    filepath=str(output_folder / output_blend_name)
+                    filepath=str(output_folder / output_blend_name_with_timestamp)
                 )
 
         tag_system.save_tag(path=str(output_folder / "MaskTag.json"))
@@ -335,7 +340,11 @@ def execute_tasks(
         )
 
     if Task.Export in task:
-        export_scene(input_folder / output_blend_name, output_folder)
+        timestamp = (
+            time.strftime("%Y%m%d_%H%M%S") + f"_{int(time.time() * 1000) % 1000:03d}"
+        )
+        output_blend_name_with_timestamp = f"{output_blend_name}_{timestamp}.blend"
+        export_scene(input_folder / output_blend_name_with_timestamp, output_folder)
 
     if Task.MeshSave in task:
         save_meshes(

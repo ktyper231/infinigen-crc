@@ -44,7 +44,7 @@ class SimulatedAnnealingSolver:
         visualize=False,
         print_report_freq=1,
         print_breakdown_freq=0,
-        initial_demon_energy=96,
+        initial_demon_energy=100,
         initial_demon_energy_max=200,
         reduction_factor=0.85,
     ) -> None:

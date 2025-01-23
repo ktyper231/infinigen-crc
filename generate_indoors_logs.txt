@@ -1,3 +1,7 @@
+main function
+module name: __main__
+parent process: 70969
+process id: 71101
 home_furniture_constraints params - furniture_fullness_pct: 0.7646440511781974
 home_furniture_constraints params - obj_interior_obj_pct: 0.8575946831862098
 home_furniture_constraints params - obj_on_storage_pct: 0.801381688035822
@@ -8,25 +12,1333 @@ home_furniture_constraints params - has_aquarium_tank: False
 home_furniture_constraints params - has_birthday_balloons: False
 home_furniture_constraints params - has_cocktail_tables: False
 home_furniture_constraints params - has_kitchen_barstools: False
-CLUTTER REPORT self.curr_iteration=50
-  State Size 36
-  Trimesh 37
-  Objects 42
-  Meshes 41
-  Materials 88
-  Textures 88
-CLUTTER REPORT self.curr_iteration=50
-  State Size 38
-  Trimesh 39
-  Objects 44
-  Meshes 43
-  Materials 168
-  Textures 168
-Warning: No mesh data to join
-Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
-Info: Removed 582 vertices
-Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
-Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
-Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
-Info: Saved "scene.blend"
-Error: Not freed memory blocks: 18, total unfreed memory 0.000069 MB
+main function
+module name: __main__
+parent process: 70969
+process id: 71106
+home_furniture_constraints params - furniture_fullness_pct: 0.7646440511781974
+home_furniture_constraints params - obj_interior_obj_pct: 0.8575946831862098
+home_furniture_constraints params - obj_on_storage_pct: 0.801381688035822
+home_furniture_constraints params - obj_on_nonstorage_pct: 0.6359065463975175
+home_furniture_constraints params - painting_area_per_room_area: 1.6354821990083572
+home_furniture_constraints params - has_tv: False
+home_furniture_constraints params - has_aquarium_tank: False
+home_furniture_constraints params - has_birthday_balloons: False
+home_furniture_constraints params - has_cocktail_tables: False
+home_furniture_constraints params - has_kitchen_barstools: False
+main function
+module name: __main__
+parent process: 70969
+process id: 71109
+home_furniture_constraints params - furniture_fullness_pct: 0.7646440511781974
+home_furniture_constraints params - obj_interior_obj_pct: 0.8575946831862098
+home_furniture_constraints params - obj_on_storage_pct: 0.801381688035822
+home_furniture_constraints params - obj_on_nonstorage_pct: 0.6359065463975175
+home_furniture_constraints params - painting_area_per_room_area: 1.6354821990083572
+home_furniture_constraints params - has_tv: False
+home_furniture_constraints params - has_aquarium_tank: False
+home_furniture_constraints params - has_birthday_balloons: False
+home_furniture_constraints params - has_cocktail_tables: False
+home_furniture_constraints params - has_kitchen_barstools: False
+main function
+module name: __main__
+parent process: 70969
+process id: 71112
+home_furniture_constraints params - furniture_fullness_pct: 0.7646440511781974
+home_furniture_constraints params - obj_interior_obj_pct: 0.8575946831862098
+home_furniture_constraints params - obj_on_storage_pct: 0.801381688035822
+home_furniture_constraints params - obj_on_nonstorage_pct: 0.6359065463975175
+home_furniture_constraints params - painting_area_per_room_area: 1.6354821990083572
+home_furniture_constraints params - has_tv: False
+home_furniture_constraints params - has_aquarium_tank: False
+home_furniture_constraints params - has_birthday_balloons: False
+home_furniture_constraints params - has_cocktail_tables: False
+home_furniture_constraints params - has_kitchen_barstools: False
+main function
+module name: __main__
+parent process: 70969
+process id: 71115
+home_furniture_constraints params - furniture_fullness_pct: 0.7646440511781974
+home_furniture_constraints params - obj_interior_obj_pct: 0.8575946831862098
+home_furniture_constraints params - obj_on_storage_pct: 0.801381688035822
+home_furniture_constraints params - obj_on_nonstorage_pct: 0.6359065463975175
+home_furniture_constraints params - painting_area_per_room_area: 1.6354821990083572
+home_furniture_constraints params - has_tv: False
+home_furniture_constraints params - has_aquarium_tank: False
+home_furniture_constraints params - has_birthday_balloons: False
+home_furniture_constraints params - has_cocktail_tables: False
+home_furniture_constraints params - has_kitchen_barstools: False
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 

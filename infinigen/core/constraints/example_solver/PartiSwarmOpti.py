@@ -5,14 +5,13 @@
 # Authors: Alexander Raistrick, Karhan Kayan
 
 import logging
-import os
+import random
 import time
 import typing
 from pprint import pprint
 
 import bpy
 import gin
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
@@ -28,6 +27,119 @@ from .state_def import State
 logger = logging.getLogger(__name__)
 
 BPY_GARBAGE_COLLECT_FREQUENCY = 20  # every X optim steps
+
+
+@gin.configurable
+class ParticleSwarmSolver:
+    def __init__(
+        self,
+        num_particles,
+        max_iterations,
+        inertia_weight=0.5,
+        cognitive_coeff=1.5,
+        social_coeff=1.5,
+        output_folder=None,
+        visualize=False,
+        print_report_freq=1,
+        print_breakdown_freq=0,
+    ):
+        self.num_particles = num_particles
+        self.max_iterations = max_iterations
+        self.inertia_weight = inertia_weight  # w
+        self.cognitive_coeff = cognitive_coeff  # c1
+        self.social_coeff = social_coeff  # c2
+        self.output_folder = output_folder
+
+        self.particles = []  # Stores the State object for each particle
+        self.velocities = []  # Velocity for each particle
+        self.pbest_positions = []  # Best positions of individual particles
+        self.pbest_scores = []  # Best scores of individual particles
+        self.gbest_position = None  # Global best position
+        self.gbest_score = float("inf")  # Best score across all particles
+
+    def extract_position(self, state: State) -> dict:
+        positions = {}
+        for obj_name, obj_state in state.objs.items():
+            if obj_state.obj is not None:
+                location = list(obj_state.obj.dof_matrix_translation)  # [x,y,z]
+
+                rotation = list(obj_state.obj.dof_rotation_axis)
+
+                # if obj_state.obj.rotation_mode == "AXIS_ANGLE":
+                #     rotation = list(obj_state.obj.rotation_axis_angle) #[angle, x ,y, z]
+                # elif obj_state.obj.rotation_mode == "QUATERNION":
+                #     rotation = list(obj_state.obj.rotation_quaternion) #[w, x, y, z]
+                # else:  #default to Euler
+                #     rotation = list(obj_state.obj.roation_euler) #[x,y,z]
+
+                # add positions dict
+                positions[obj_name] = {"location": location, "rotation": rotation}
+        return positions
+
+    def update_state_from_position(state: State, position: dict):
+        for obj_name, obj_state in state.objs.items():
+            if obj_state.obj is not None and obj_state in position:
+                # update object translation
+                obj_state.obj.location = position[obj_name]["location"]
+
+                # update rotation
+                rotation = position[obj_name]["rotation"]
+                if obj_state.obj.rotation_mode == "AXIS_ANGLE":
+                    obj_state.obj.rotation_axis_angle = rotation
+                elif obj_state.obj.rotation_mode == "QUATERNION":
+                    obj_state.obj.rotation_quaternion = rotation
+                else:
+                    obj_state.obj.rotation_euler = rotation
+
+    def initialize_particles(self, initial_state):
+        initial_position = self.extract_position(initial_state)
+
+        for i in range(self.num_particles):
+            particle = initial_position.copy()
+            self.particles.append(particle)
+            velocity = random.uniform(0, 1)
+            self.velocities.append(velocity)
+            self.pbest_positions.append(particle.copy())
+            self.pbest_scores.append(float("inf"))
+
+    def evaluate_fitness(
+        self, particle, consgraph: "cl.Node", filter_domain: "r.Domain"
+    ):
+        result = evaluate.evaluate_problem(consgraph, particle, filter_domain, memo={})
+        return result
+
+    def update_particles(self, consgraph, filter_domain, iteration, max_iterations):
+        # update particles position and velocities
+        for i, particle in enumerate(self.particles):
+            fitness = self.evaluate_fitness(particle, consgraph, filter_domain)
+
+            if fitness.loss() < self.pbest_scores[i]:
+                self.pbest_scores[i] = fitness
+                self.pbest_positions[i] = particle.copy()
+
+        w = self.inertia_weight - (
+            (self.inertia_weight - 0.4) * (iteration / max_iterations)
+        )
+
+        for i, particle in enumerate(self.particles):
+            # Vi(t+1)=w*Vi(t) + c1 * r1 * (pbesti - Xi(t)) + c2 * r2 * (gbest - Xi(t))
+            inertia = w * self.velocities[i]
+            r1 = random.random()
+            cognitive = self.cognitive_coeff * r1 * (self.best_positions[i] - particle)
+            r2 = random.random()
+            social = self.social_coeff * r2 * (self.gbest_position - particle)
+            self.velocities[i] = inertia + cognitive + social
+
+            self.particles[i] += self.velocities[i]
+
+    def solve(self, consgraph: "cl.Node", initial_state, filter_domain: "r.Domain"):
+        self.initialize_particles(initial_state)
+
+        for i in range(self.max_iterations):
+            self.update_particles(consgraph, filter_domain, i, self.max_iterations)
+            logger.info(f"Iteration {i}: Best Score = {self.gbest_score}")
+
+        return self.gbest_position, self.gbest_score
 
 
 @gin.configurable
@@ -65,30 +177,30 @@ class SimulatedAnnealingSolver:
         self.eval_memo = {}
         self.stats = []
 
-    def save_stats(self, path):
-        if len(self.stats) == 0:
-            return
+    # def save_stats(self, path):
+    #     if len(self.stats) == 0:
+    #         return
 
-        df = pd.DataFrame.from_records(self.stats)
+    #     df = pd.DataFrame.from_records(self.stats)
 
-        logger.info(f"Saving stats {path}")
-        df.to_csv(path)
+    #     logger.info(f"Saving stats {path}")
+    #     df.to_csv(path)
 
-        fig, ax1 = plt.subplots()
-        ax1.set_xlabel("Iteration")
-        ax1.set_ylabel("Score", color="C0")
-        ax1.plot(np.arange(len(df)), df["loss"], color="C0")
+    #     fig, ax1 = plt.subplots()
+    #     ax1.set_xlabel("Iteration")
+    #     ax1.set_ylabel("Score", color="C0")
+    #     ax1.plot(np.arange(len(df)), df["loss"], color="C0")
 
-        # ax2 = ax1.twinx()
-        # ax2.set_ylabel('Move Time', color='C1')
-        # ax2.plot(df['curr_iteration'], df['move_dur'], color='C1')
+    #     # ax2 = ax1.twinx()
+    #     # ax2.set_ylabel('Move Time', color='C1')
+    #     # ax2.plot(df['curr_iteration'], df['move_dur'], color='C1')
 
-        figpath = path.parent / (path.stem + ".png")
-        logger.info(f"Saving plot {figpath}")
-        plt.savefig(figpath)
-        plt.close()
+    #     figpath = path.parent / (path.stem + ".png")
+    #     logger.info(f"Saving plot {figpath}")
+    #     plt.savefig(figpath)
+    #     plt.close()
 
-        logger.info(f"Total elapsed {path.stem} {self.stats[-1]['elapsed']:.2f}")
+    #     logger.info(f"Total elapsed {path.stem} {self.stats[-1]['elapsed']:.2f}")
 
     def reset(self, max_iters):
         self.curr_iteration = 0
@@ -110,24 +222,24 @@ class SimulatedAnnealingSolver:
             f"Reset solver with {max_iters=} cooling_rate={self.cooling_rate:.4f}"
         )
 
-    def checkpoint(self, state):
-        filename = os.path.join(self.output_folder, "checkpoint_state.pkl")
-        state.save(filename)
+    # def checkpoint(self, state):
+    #     filename = os.path.join(self.output_folder, "checkpoint_state.pkl")
+    #     state.save(filename)
 
-        if self.visualize:
-            # save score plot
-            plt.plot(self.score_history)
-            plt.savefig(os.path.join(self.output_folder, "scores.png"))
-            plt.close()
+    #     if self.visualize:
+    #         # save score plot
+    #         plt.plot(self.score_history)
+    #         plt.savefig(os.path.join(self.output_folder, "scores.png"))
+    #         plt.close()
 
-            # render image
-            i = 1
-            while os.path.exists(os.path.join(self.output_folder, f"{i:04}.png")):
-                i += 1
-            bpy.context.scene.render.filepath = os.path.join(
-                self.output_folder, f"{i:04}.png"
-            )
-            bpy.ops.render.render(write_still=True)
+    #         # render image
+    #         i = 1
+    #         while os.path.exists(os.path.join(self.output_folder, f"{i:04}.png")):
+    #             i += 1
+    #         bpy.context.scene.render.filepath = os.path.join(
+    #             self.output_folder, f"{i:04}.png"
+    #         )
+    #         bpy.ops.render.render(write_still=True)
 
     def validate_lazy_eval(
         self,
@@ -194,10 +306,6 @@ class SimulatedAnnealingSolver:
         filter_domain: "r.Domain",
     ) -> typing.Tuple["Move", "evaluate.EvalResult", int]:
         move_gen = propose_func(consgraph, state, filter_domain, temp)
-
-        print("\nmove_gen: \n")
-        print(f"\ntype(move_gen): {type(move_gen)}\n")
-        logger.debug(f"\nmove_gen: {move_gen}\n")
 
         move = None
         retry = None

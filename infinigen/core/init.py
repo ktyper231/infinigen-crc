@@ -14,6 +14,7 @@ import bpy
 os.environ["OPENCV_IO_ENABLE_OPENEXR"] = "1"  # This must be done BEFORE import cv2.
 # See https://github.com/opencv/opencv/issues/21326#issuecomment-1008517425
 
+
 import addon_utils
 import gin
 import numpy as np
@@ -60,12 +61,31 @@ def parse_seed(seed, task=None):
 
     # WARNING: Do not add support for decimal numbers here, it will cause ambiguity, as some hex numbers are valid decimals
 
+    ########developing: accept multiple seeds###########
+    seeds = []
+    seeds_str = seed.split()
+    if len(seeds_str) > 1:
+        for s in seeds_str:
+            seeds.append(int(s, 16))
+        logger.info(f"multiple seeds: {seeds}")
+    ####################################################
+
     try:
         return int(seed, 16), "parsed as hexadecimal"
     except ValueError:
         pass
 
     return int_hash(seed), "hashed string to integer"
+
+
+def seeds_generator(num_seeds):
+    seeds = []
+    for i in range(num_seeds):
+        seed_str = str(random.randrange(num_seeds * 100))
+        seed = int_hash(seed_str)
+        seeds.append(seed)
+
+    return seeds
 
 
 def apply_scene_seed(seed, task=None):
@@ -75,6 +95,16 @@ def apply_scene_seed(seed, task=None):
     random.seed(scene_seed)
     np.random.seed(scene_seed)
     return scene_seed
+
+
+def apply_scene_seed_sedgen(num_seeds):
+    scene_seeds = seeds_generator(num_seeds)
+    result_scene_seeds = []
+    for seed in scene_seeds:
+        random.seed(seed)
+        np.random.seed(seed)
+        result_scene_seeds.append(seed)
+    return result_scene_seeds
 
 
 def sanitize_override(override: list):
