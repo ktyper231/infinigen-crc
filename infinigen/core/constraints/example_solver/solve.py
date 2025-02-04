@@ -6,6 +6,7 @@
 
 import copy
 import logging
+from multiprocessing import Process, Queue  # noqa: F401
 from pathlib import Path
 
 import bpy
@@ -24,8 +25,9 @@ from infinigen.core.constraints.example_solver import (
 from infinigen.core.constraints.example_solver.state_def import State
 from infinigen.core.util import blender as butil
 
-# from .annealing import SimulatedAnnealingSolver
-from .annealing_testOptiP import SimulatedAnnealingSolver
+from .annealing import SimulatedAnnealingSolver
+
+# from .annealing_testOptiP import SimulatedAnnealingSolver
 from .room.floor_plan import FloorPlanSolver
 
 logger = logging.getLogger(__name__)
@@ -54,10 +56,7 @@ class LinearDecaySchedule:
 
 @gin.configurable
 class Solver:
-    def __init__(
-        self,
-        output_folder: Path,
-    ):
+    def __init__(self, output_folder: Path, queue: Queue = None):
         """Initialize the solver
 
         Parameters
@@ -78,6 +77,7 @@ class Solver:
 
         self.optim = SimulatedAnnealingSolver(
             output_folder=output_folder,
+            queue=queue,
         )
         self.room_solver_fn = FloorPlanSolver
         self.state: State = None
@@ -189,7 +189,7 @@ class Solver:
         ra = trange(n_steps) if self.optim.print_report_freq == 0 else range(n_steps)
         for j in ra:
             move_gen = self.choose_move_type(moves, j, n_steps)
-            self.optim.step(consgraph, self.state, move_gen, filter_domain)
+            self.optim.step(consgraph, self.state, move_gen, filter_domain, j)
 
         logger.info(
             f"Finished solving {desc_full}, added {len(self.state.objs) - n_start} "

@@ -16,7 +16,7 @@ logging.basicConfig(
 
 import os
 import time
-from multiprocessing import Process
+from multiprocessing import Process, Queue  # noqa: F401
 
 import gin
 import numpy as np
@@ -132,7 +132,9 @@ all_vars = [cu.variable_room, cu.variable_obj]
 
 
 @gin.configurable
-def compose_indoors(output_folder: Path, scene_seed: int, **overrides):
+def compose_indoors(
+    output_folder: Path, scene_seed: int, queue: Queue = None, **overrides
+):
     p = pipeline.RandomStageExecutor(scene_seed, output_folder, overrides)
 
     logger.debug(overrides)
@@ -181,7 +183,7 @@ def compose_indoors(output_folder: Path, scene_seed: int, **overrides):
         logger.info(f"Restricting to {restrict_parent_rooms}")
         apply_greedy_restriction(stages, restrict_parent_rooms, cu.variable_room)
 
-    solver = Solver(output_folder=output_folder)
+    solver = Solver(output_folder=output_folder, queue=queue)
 
     def solve_rooms():
         return solver.solve_rooms(scene_seed, consgraph_rooms, stages["rooms"])
@@ -511,10 +513,13 @@ def info(title):
     logger.info("process id:", os.getpid())
 
 
-def exec_main(args, seed):
+def exec_main(args, seed, queue):
     info("main function")
     execute_tasks.main(
-        compose_scene_func=compose_indoors,
+        compose_scene_func=lambda output_folder, scene_seed, **kwargs: compose_indoors(
+            output_folder, scene_seed, queue=queue, **kwargs
+        ),
+        # compose_scene_func=compose_indoors,
         populate_scene_func=None,
         input_folder=args.input_folder,
         output_folder=args.output_folder,
@@ -522,6 +527,25 @@ def exec_main(args, seed):
         task_uniqname=args.task_uniqname,
         scene_seed=seed,
     )
+
+
+# listener func to contineuously listen to loss and violation
+def listener(queue):
+    while True:
+        try:
+            data = queue.get()
+            if data == "DONE":
+                break
+            pid = data["pid"]
+            curr_loss = data["curr_loss"]
+            curr_viol = data["curr_viol"]
+            curr_iter = data["curr_iter"]
+            logger.info(f"Process={pid}")
+            logger.info(f"curr loss={curr_loss}")
+            logger.info(f"curr viol={curr_viol}")
+            logger.info(f"curr iter={curr_iter}")
+        except Exception as e:
+            logger.error(f"Listener encountered an error: {e}")
 
 
 def main(args, parallel=True):
@@ -542,14 +566,20 @@ def main(args, parallel=True):
     )
     if parallel:
         processes = []
+        queue = Queue()
+        listener_process = Process(target=listener, args=(queue,))
+        listener_process.start()
         for i, seed in enumerate(scene_seed):
-            process = Process(target=exec_main, args=(args, seed))
+            process = Process(target=exec_main, args=(args, seed, queue))
             logger.info(f"seed: {seed}")
             processes.append(process)
             process.start()
 
         for process in processes:
             process.join()
+
+        queue.put("DONE")
+        listener_process.join()
 
     else:
         exec_main(args, scene_seed)

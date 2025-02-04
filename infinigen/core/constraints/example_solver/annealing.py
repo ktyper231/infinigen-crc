@@ -8,6 +8,7 @@ import logging
 import os
 import time
 import typing
+from multiprocessing import Process, Queue  # noqa: F401
 from pprint import pprint
 
 import bpy
@@ -40,6 +41,7 @@ class SimulatedAnnealingSolver:
         finetune_pct,
         checkpoint_best=False,
         output_folder=None,
+        queue=None,  # multiprocessing
         visualize=False,
         print_report_freq=1,
         print_breakdown_freq=0,
@@ -64,6 +66,8 @@ class SimulatedAnnealingSolver:
 
         self.eval_memo = {}
         self.stats = []
+
+        self.queue = queue  # multiprocessing
 
     def save_stats(self, path):
         if len(self.stats) == 0:
@@ -251,9 +255,10 @@ class SimulatedAnnealingSolver:
         # standard metropolis-hastings
         rv = np.log(np.random.uniform())
         result["accept"] = rv < log_prob
+
         return result
 
-    def step(self, consgraph, state, move_gen_func, filter_domain):
+    def step(self, consgraph, state, move_gen_func, filter_domain, iter):
         if self.curr_result is None:
             self.curr_result = evaluate.evaluate_problem(
                 consgraph, state, filter_domain
@@ -309,6 +314,17 @@ class SimulatedAnnealingSolver:
             diff = accept_result["diff"]
             accept = accept_result["accept"]
             viol_diff = accept_result["viol_diff"] or 0
+
+            # multiprocessing
+            if self.queue is not None:
+                self.queue.put(
+                    {
+                        "pid": os.getpid(),
+                        "curr_loss": loss,
+                        "curr_viol": viol,
+                        "curr_iter": iter,
+                    }
+                )
 
             logger.info(
                 f"it={self.curr_iteration}/{self.max_iterations} {dt=:.3f} {n=} "
