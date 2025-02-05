@@ -17,6 +17,7 @@ logging.basicConfig(
 import os
 import time
 from multiprocessing import Process, Queue  # noqa: F401
+import signal
 
 import gin
 import numpy as np
@@ -186,6 +187,7 @@ def compose_indoors(
     solver = Solver(output_folder=output_folder, queue=queue)
 
     def solve_rooms():
+        scene_seed = 0000000000
         return solver.solve_rooms(scene_seed, consgraph_rooms, stages["rooms"])
 
     state: state_def.State = p.run_stage("solve_rooms", solve_rooms, use_chance=False)
@@ -306,7 +308,7 @@ def compose_indoors(
     timestamp = (
         time.strftime("%Y%m%d_%H%M%S") + f"_{int(time.time() * 1000) % 1000:03d}"
     )
-    optim_records_with_timestamp = f"optim_records_{timestamp}.csv"
+    optim_records_with_timestamp = f"optim_records_{scene_seed}_{timestamp}.csv"
 
     # solver.optim.save_stats(output_folder / "optim_records.csv")
     solver.optim.save_stats(output_folder / optim_records_with_timestamp)
@@ -505,13 +507,11 @@ def compose_indoors(
         "whole_bbox": house_bbox,
     }
 
-
 def info(title):
     logger.info(title)
     logger.info("module name:", __name__)
     logger.info("parent process:", os.getppid())
     logger.info("process id:", os.getpid())
-
 
 def exec_main(args, seed, queue):
     info("main function")
@@ -528,9 +528,9 @@ def exec_main(args, seed, queue):
         scene_seed=seed,
     )
 
-
 # listener func to contineuously listen to loss and violation
-def listener(queue):
+def listener(queue, iter_fraction=0.8, min_loss = 20):
+    info("listener")
     while True:
         try:
             data = queue.get()
@@ -540,20 +540,42 @@ def listener(queue):
             curr_loss = data["curr_loss"]
             curr_viol = data["curr_viol"]
             curr_iter = data["curr_iter"]
+            max_iter = data["max_iter"]
             logger.info(f"Process={pid}")
             logger.info(f"curr loss={curr_loss}")
             logger.info(f"curr viol={curr_viol}")
             logger.info(f"curr iter={curr_iter}")
+            logger.info(f"max iter={max_iter}")
+            
+            limit_iter = max_iter * iter_fraction            
+            if curr_iter >= limit_iter:
+                logger.info(f"reached limit iteration: {limit_iter}")
+                if curr_loss > min_loss:
+                    logger.info(f"\n\nkilling process {pid}\n")
+                    logger.info(f"current loss is: {curr_loss}\n")
+                    logger.info(f"exceed min loss: {min_loss}\n\n")
+                    os.kill(pid, signal.SIGTERM)
+                
         except Exception as e:
             logger.error(f"Listener encountered an error: {e}")
-
 
 def main(args, parallel=True):
     logger.info(f"\n\nargs.seed: {args.seed} type: {type(args.seed)}\n\n")
     if parallel:
         scene_seed = init.apply_scene_seed_sedgen(num_seeds=3)
+        
     else:
         scene_seed = init.apply_scene_seed(args.seed)
+
+    timestamp = (time.strftime("%Y%m%d_%H%M%S") + f"_{int(time.time() * 1000) % 1000:03d}")
+    scene_seed_with_timestamp = f"scene_seeds_{timestamp}.txt"
+    with open(scene_seed_with_timestamp, "w") as file:
+        file.write("All Scene Seed Generated:\n")
+        if isinstance(scene_seed, (list, tuple)):  # Handle multiple seeds
+            for seed in scene_seed:
+                file.write(f"{seed}\n")
+        else:  # Handle a single seed
+            file.write(f"{scene_seed}\n")
 
     logger.info(f"\n\nscene seed: {scene_seed} type: {type(scene_seed)}\n\n")
     init.apply_gin_configs(

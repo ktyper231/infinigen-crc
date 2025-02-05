@@ -323,6 +323,7 @@ class SimulatedAnnealingSolver:
                         "curr_loss": loss,
                         "curr_viol": viol,
                         "curr_iter": iter,
+                        "max_iter": self.max_iterations,
                     }
                 )
 
