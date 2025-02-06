@@ -15,9 +15,9 @@ logging.basicConfig(
 )
 
 import os
+import signal
 import time
 from multiprocessing import Process, Queue  # noqa: F401
-import signal
 
 import gin
 import numpy as np
@@ -507,11 +507,13 @@ def compose_indoors(
         "whole_bbox": house_bbox,
     }
 
+
 def info(title):
     logger.info(title)
     logger.info("module name:", __name__)
     logger.info("parent process:", os.getppid())
     logger.info("process id:", os.getpid())
+
 
 def exec_main(args, seed, queue):
     info("main function")
@@ -528,8 +530,9 @@ def exec_main(args, seed, queue):
         scene_seed=seed,
     )
 
+
 # listener func to contineuously listen to loss and violation
-def listener(queue, iter_fraction=0.8, min_loss = 20):
+def listener(queue, iter_fraction=0.8, min_loss=20):
     info("listener")
     while True:
         try:
@@ -546,8 +549,8 @@ def listener(queue, iter_fraction=0.8, min_loss = 20):
             logger.info(f"curr viol={curr_viol}")
             logger.info(f"curr iter={curr_iter}")
             logger.info(f"max iter={max_iter}")
-            
-            limit_iter = max_iter * iter_fraction            
+
+            limit_iter = max_iter * iter_fraction
             if curr_iter >= limit_iter:
                 logger.info(f"reached limit iteration: {limit_iter}")
                 if curr_loss > min_loss:
@@ -555,19 +558,22 @@ def listener(queue, iter_fraction=0.8, min_loss = 20):
                     logger.info(f"current loss is: {curr_loss}\n")
                     logger.info(f"exceed min loss: {min_loss}\n\n")
                     os.kill(pid, signal.SIGTERM)
-                
+
         except Exception as e:
             logger.error(f"Listener encountered an error: {e}")
+
 
 def main(args, parallel=True):
     logger.info(f"\n\nargs.seed: {args.seed} type: {type(args.seed)}\n\n")
     if parallel:
         scene_seed = init.apply_scene_seed_sedgen(num_seeds=3)
-        
+
     else:
         scene_seed = init.apply_scene_seed(args.seed)
 
-    timestamp = (time.strftime("%Y%m%d_%H%M%S") + f"_{int(time.time() * 1000) % 1000:03d}")
+    timestamp = (
+        time.strftime("%Y%m%d_%H%M%S") + f"_{int(time.time() * 1000) % 1000:03d}"
+    )
     scene_seed_with_timestamp = f"scene_seeds_{timestamp}.txt"
     with open(scene_seed_with_timestamp, "w") as file:
         file.write("All Scene Seed Generated:\n")

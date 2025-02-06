@@ -1,29 +1,29 @@
-home_furniture_constraints params - furniture_fullness_pct: 0.859673116360478
-home_furniture_constraints params - obj_interior_obj_pct: 0.6757248341105135
-home_furniture_constraints params - obj_on_storage_pct: 0.6859953692055769
-home_furniture_constraints params - obj_on_nonstorage_pct: 0.3997635963174766
-home_furniture_constraints params - painting_area_per_room_area: 1.6652102739510561
-home_furniture_constraints params - has_tv: True
+home_furniture_constraints params - furniture_fullness_pct: 0.6491997751747683
+home_furniture_constraints params - obj_interior_obj_pct: 0.6311846317537533
+home_furniture_constraints params - obj_on_storage_pct: 0.9981405360202718
+home_furniture_constraints params - obj_on_nonstorage_pct: 0.8306934246557238
+home_furniture_constraints params - painting_area_per_room_area: 2.280098144226026
+home_furniture_constraints params - has_tv: False
 home_furniture_constraints params - has_aquarium_tank: False
 home_furniture_constraints params - has_birthday_balloons: False
 home_furniture_constraints params - has_cocktail_tables: False
 home_furniture_constraints params - has_kitchen_barstools: False
-home_furniture_constraints params - furniture_fullness_pct: 0.859673116360478
-home_furniture_constraints params - obj_interior_obj_pct: 0.6757248341105135
-home_furniture_constraints params - obj_on_storage_pct: 0.6859953692055769
-home_furniture_constraints params - obj_on_nonstorage_pct: 0.3997635963174766
-home_furniture_constraints params - painting_area_per_room_area: 1.6652102739510561
-home_furniture_constraints params - has_tv: True
+home_furniture_constraints params - furniture_fullness_pct: 0.6491997751747683
+home_furniture_constraints params - obj_interior_obj_pct: 0.6311846317537533
+home_furniture_constraints params - obj_on_storage_pct: 0.9981405360202718
+home_furniture_constraints params - obj_on_nonstorage_pct: 0.8306934246557238
+home_furniture_constraints params - painting_area_per_room_area: 2.280098144226026
+home_furniture_constraints params - has_tv: False
 home_furniture_constraints params - has_aquarium_tank: False
 home_furniture_constraints params - has_birthday_balloons: False
 home_furniture_constraints params - has_cocktail_tables: False
 home_furniture_constraints params - has_kitchen_barstools: False
-home_furniture_constraints params - furniture_fullness_pct: 0.859673116360478
-home_furniture_constraints params - obj_interior_obj_pct: 0.6757248341105135
-home_furniture_constraints params - obj_on_storage_pct: 0.6859953692055769
-home_furniture_constraints params - obj_on_nonstorage_pct: 0.3997635963174766
-home_furniture_constraints params - painting_area_per_room_area: 1.6652102739510561
-home_furniture_constraints params - has_tv: True
+home_furniture_constraints params - furniture_fullness_pct: 0.6491997751747683
+home_furniture_constraints params - obj_interior_obj_pct: 0.6311846317537533
+home_furniture_constraints params - obj_on_storage_pct: 0.9981405360202718
+home_furniture_constraints params - obj_on_nonstorage_pct: 0.8306934246557238
+home_furniture_constraints params - painting_area_per_room_area: 2.280098144226026
+home_furniture_constraints params - has_tv: False
 home_furniture_constraints params - has_aquarium_tank: False
 home_furniture_constraints params - has_birthday_balloons: False
 home_furniture_constraints params - has_cocktail_tables: False
@@ -446,10 +446,34 @@ type(move_gen): <class 'generator'>
 move_gen: 
 
 
+type(move_gen): <class 'generator'>
+
+
 move_gen: 
+
 
 type(move_gen): <class 'generator'>
 
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
 
 
 type(move_gen): <class 'generator'>
@@ -911,12 +935,67 @@ move_gen:
 type(move_gen): <class 'generator'>
 
 CLUTTER REPORT self.curr_iteration=50
-  State Size 35
-  Trimesh 36
-  Objects 41
-  Meshes 40
-  Materials 72
-  Textures 72
+  State Size 34
+  Trimesh 35
+  Objects 40
+  Meshes 39
+  Materials 48
+  Textures 48
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+CLUTTER REPORT self.curr_iteration=50
+  State Size 32
+  Trimesh 33
+  Objects 38
+  Meshes 37
+  Materials 123
+  Textures 123
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
 
 move_gen: 
 
@@ -928,8 +1007,8 @@ CLUTTER REPORT self.curr_iteration=50
   Trimesh 34
   Objects 39
   Meshes 38
-  Materials 89
-  Textures 89
+  Materials 74
+  Textures 74
 
 move_gen: 
 
@@ -1104,13 +1183,6 @@ move_gen:
 
 type(move_gen): <class 'generator'>
 
-CLUTTER REPORT self.curr_iteration=50
-  State Size 39
-  Trimesh 40
-  Objects 45
-  Meshes 44
-  Materials 104
-  Textures 104
 
 move_gen: 
 
@@ -1993,265 +2065,6 @@ move_gen:
 
 type(move_gen): <class 'generator'>
 
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-
-move_gen: 
-
-
-type(move_gen): <class 'generator'>
-
-CLUTTER REPORT self.curr_iteration=50
-  State Size 37
-  Trimesh 38
-  Objects 43
-  Meshes 42
-  Materials 105
-  Textures 105
 
 move_gen: 
 
@@ -2533,8 +2346,8 @@ CLUTTER REPORT self.curr_iteration=50
   Trimesh 36
   Objects 41
   Meshes 40
-  Materials 140
-  Textures 140
+  Materials 145
+  Textures 145
 
 move_gen: 
 
@@ -2739,6 +2552,776 @@ move_gen:
 
 type(move_gen): <class 'generator'>
 
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+CLUTTER REPORT self.curr_iteration=50
+  State Size 35
+  Trimesh 36
+  Objects 41
+  Meshes 40
+  Materials 219
+  Textures 219
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+CLUTTER REPORT self.curr_iteration=50
+  State Size 36
+  Trimesh 37
+  Objects 42
+  Meshes 41
+  Materials 153
+  Textures 153
 
 move_gen: 
 
@@ -2950,16 +3533,159 @@ move_gen:
 type(move_gen): <class 'generator'>
 
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
+Info: Removed 777 vertices
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
+
+move_gen: 
+
+
+type(move_gen): <class 'generator'>
+
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
-Info: Removed 905 vertices
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
-Info: Saved "scene_3369323607_20250205_165403_092.blend"
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
 Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
-Info: Saved "scene_941878540_20250205_165503_054.blend"
+Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
+Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
+Info: Saved "scene_941878540_20250206_104328_264.blend"
+Info: Saved "scene_2405356404_20250206_104408_561.blend"
+Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
+Warning: Unwrap failed to solve 1 of 1 island(s), edge seams may need to be added
+Info: Saved "scene_2862637127_20250206_104449_462.blend"

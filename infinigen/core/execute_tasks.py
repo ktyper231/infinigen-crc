@@ -283,7 +283,9 @@ def execute_tasks(
     timestamp = (
         time.strftime("%Y%m%d_%H%M%S") + f"_{int(time.time() * 1000) % 1000:03d}"
     )
-    output_blend_name_with_timestamp = f"{output_blend_name}_{scene_seed}_{timestamp}.blend"
+    output_blend_name_with_timestamp = (
+        f"{output_blend_name}_{scene_seed}_{timestamp}.blend"
+    )
     if input_folder is not None and input_folder != output_folder:
         for mesh in os.listdir(input_folder):
             if (
@@ -343,7 +345,7 @@ def execute_tasks(
         timestamp = (
             time.strftime("%Y%m%d_%H%M%S") + f"_{int(time.time() * 1000) % 1000:03d}"
         )
-        #output_blend_name_with_timestamp = f"{output_blend_name}_{timestamp}.blend"
+        # output_blend_name_with_timestamp = f"{output_blend_name}_{timestamp}.blend"
         export_scene(input_folder / output_blend_name_with_timestamp, output_folder)
 
     if Task.MeshSave in task:

@@ -956,7 +956,7 @@ def export_curr_scene(
             ):
                 continue
 
-            obj_name = obj.name.replace('/', '_')
+            obj_name = obj.name.replace("/", "_")
             export_subfolder = export_folder / obj_name
             export_subfolder.mkdir(exist_ok=True, parents=True)
             export_file = export_subfolder / f"{obj_name}.{format}"
